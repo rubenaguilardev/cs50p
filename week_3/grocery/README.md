@@ -1,4 +1,4 @@
-Grocery List
+Grocery List<br>
 Suppose that you’re in the habit of making a list of items you need from the grocery store.
 
 In a file called grocery.py, implement a program that prompts the user for items, one per line, until the user inputs control-d (which is a common 
