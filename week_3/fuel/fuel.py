@@ -1,33 +1,19 @@
 def main():
-    
-    fuel_amount = get_fuel_amount()
-    check_percentage(fuel_amount)
 
+    def fuel():
+        while True:
+            try:
+                x, y = input("Fraction: ").split('/')
+                x = int(x)
+                y = int(y)
+                if x < y and x >= 0 or x == y:
+                    percentage = round((x / y) * 100)
+                    return "E" if percentage <= 1 else "F" if percentage >= 99 else f"{percentage}%"
+            except (ValueError, ZeroDivisionError):
+                pass
 
-def get_fuel_amount():
-
-    while True:
-        try:
-            x, y = input("Fraction: ").split('/')
-            x, y = int(x), int(y)
-            if x > y or x < 0 or y < 0:
-                continue
-        except (ValueError, ZeroDivisionError):
-            pass
-        else:
-            return x / y * 100
-        
-
-def check_percentage(fuel):
-      
-    if fuel <= 1:
-        print('E')
-    elif fuel >= 99:
-        print('F')
-    else:
-        print(f"{round(fuel)}%")
-        
-
+    print(fuel())
 
 main()
+
 
